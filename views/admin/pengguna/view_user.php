@@ -1,10 +1,10 @@
 <?php 
-require_once('cek_level.php');
-require_once('../../url_helper.php');
-require_once('../../proccess/crud/function_user.php');
-include_once('../templates/head.php');
-include_once('../templates/navbar.php');
-include_once('../templates/sidebar.php');
+require_once('../cek_level.php');
+require_once('../../../url_helper.php');
+require_once('../../../proccess/crud/function_user.php');
+include_once('../../templates/head.php');
+include_once('../../templates/navbar.php');
+include_once('../../templates/sidebar.php');
 ?>  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -20,15 +20,25 @@ include_once('../templates/sidebar.php');
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <!-- Main row -->
-      <?php include('form_tambah_user.php');?>
-      <?php include('form_ubah_user.php'); ?>
+      <?php
+      if (isset($_SESSION['pesan'])) {?>
+        <div class="alert alert-<?=$_SESSION['warna']?> alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <h4><i class="icon fa <?=$_SESSION['ikon']?>"></i> Alert!</h4>
+          <?=$_SESSION['pesan']?>
+        </div>
+      <?php  
+      unset($_SESSION['pesan']);
+      }
+      ?>
+      
       <div class="row">
         <!-- Left col -->
         <section class="col-lg-12 connectedSortable">
           <!-- Custom tabs (Charts with tabs)-->
           <div class="box">
             <div class="box-header">
-							<a href="#tambah" id="btn_tambah" class="btn btn-primary btn-sm">Tambah Data</a>
+							<a href="form_tambah_user.php" id="btn_tambah" class="btn btn-primary btn-sm">Tambah Data</a>
             </div>
 						<!-- /.box-header -->
             <div class="box-body">
@@ -56,9 +66,8 @@ include_once('../templates/sidebar.php');
                   <td ><?=$p['level']?></td>
                   <td><?= $status = ($p['status']==1) ? 'aktif' : 'non-aktif' ; ?></td>
                   <td>
-										<a href="#ubah" id="btn_ubah" class="btn btn-warning btn-sm">Ubah</a> 
-										<a href="#ubah" id="btn_batal" class="btn btn-default btn-sm">Batal</a> 
-										<a href="#aktif" class="btn <?= ($p['status']==1) ? 'btn-danger' : 'btn-success' ;?> btn-sm"><?= $set_status = ($p['status']==1) ? 'Non-Aktifkan' : 'Aktifkan' ;?></a></td>
+										<a href="form_ubah_user.php?id=<?=$p['id']?>" id="btn_ubah"  class="btn btn-warning btn-sm">Ubah</a> 
+                    <a onclick="return confirm('apakah anda yakinn ingin mengubaha status?')" href="hapus_user.php?id=<?=$p['id']?>&st=<?=$p['status']?>" class="btn <?= ($p['status']==1) ? 'btn-danger' : 'btn-success' ;?> btn-sm"><?= $set_status = ($p['status']==1) ? 'Non-Aktifkan' : 'Aktifkan' ;?>
                 </tr>
 								<?php 
 								$no++; } 
@@ -72,7 +81,7 @@ include_once('../templates/sidebar.php');
     </section>
   </div>
 <?php 
-include_once('../templates/footer.php');
+include_once('../../templates/footer.php');
 ?>
 <script>
   $(function () {
@@ -86,33 +95,9 @@ include_once('../templates/footer.php');
       'autoWidth'   : false
     })
   })
-
-	$('#form_tambah').hide();
-	$('#form_ubah').hide();
-	$('#btn_batal').hide();
-	$('#btn_tambah').click(function(){
-		$("#form_tambah").slideToggle("normal");
-		$("#form_ubah").hide();
-  	$("#btn_tambah").hide();
-	})
-  $('#btn_ubah').click(function(){
-		$("#form_ubah").slideToggle("normal");
-  	$("#btn_ubah").hide();
-  	$("#btn_batal").show();
-	})
-  $('#close_form_tambah').click(function(){
-		$("#form_tambah").slideToggle("normal");
-  	$("#btn_tambah").show();
-	})
-  $('#close_form_ubah').click(function(){
-		$("#form_ubah").slideToggle("normal");
-  	$("#btn_ubah").hide();
-  	$("#btn_batal").show();
-	})
-  
-  $('#btn_batal').click(function(){
-		$("#form_ubah").slideToggle("normal");
-  	$("#btn_ubah").show();
-  	$("#btn_batal").hide();
-	})
+  window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+      $(this).remove(); 
+    });
+  }, 5000);
 </script>

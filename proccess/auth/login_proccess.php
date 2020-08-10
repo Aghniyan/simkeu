@@ -25,12 +25,12 @@ if (isset($_POST['login'])) {
                 echo "ini halaman admin";
                 header("Location:http://localhost/simkeu/views/admin/index.php");
                 break;
-            case 'keptu':
+            case 'Tata Usaha':
                 echo "ini halaman Kepala TU";
                 header("Location:http://localhost/simkeu/views/tu/index.php");
                 # code...
                 break;
-            case 'kepma':
+            case 'Kepala Madrasah':
                 echo "ini halaman Kepala Madrasah";
                 header("Location:http://localhost/simkeu/views/kepma/index.php");
                 # code...

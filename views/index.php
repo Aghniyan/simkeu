@@ -6,12 +6,12 @@
 					echo "ini halaman admin";
 					header("Location:http://localhost/simkeu/views/admin/index.php");
 					break;
-			case 'keptu':
+			case 'Tata Usaha':
 					echo "ini halaman Kepala TU";
 					header("Location:http://localhost/simkeu/views/tu/index.php");
 					# code...
 					break;
-			case 'kepma':
+			case 'Kepala Madrasah':
 					echo "ini halaman Kepala Madrasah";
 					header("Location:http://localhost/simkeu/views/kepma/index.php");
 					# code...
@@ -56,6 +56,7 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
+							
 								<div class="logo text-center"><img src="assets/img/logo-maskh.jpg" alt="Klorofil Logo" width="100px" height="100px"></div>
 								<p class="lead">SILAHKAN MASUK</p>
 								<?php
@@ -63,7 +64,20 @@
 										echo"<p>Username dan Password salah</p>";
 									}
 								?>
-							</div>
+						<?php
+							if (isset($_SESSION['pesan'])) {?>
+								<div class="alert alert-<?=$_SESSION['warna']?> alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+									<h4><i class="icon fa <?=$_SESSION['ikon']?>"></i> Alert!</h4>
+									<?=$_SESSION['pesan']?>
+								</div>
+							<?php  
+							// unset($_SESSION['pesan']);
+							}
+							// var_dump($rencana_personalia);
+							?>
+								
+						</div>
 							<form class="form-auth-small" method="POST" action="<?=$base_url?>proccess/auth/login_proccess.php">
 								<div class="form-group">
 									<label for="username" class="control-label sr-only">Nama Pengguna</label>

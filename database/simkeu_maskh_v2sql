@@ -1,0 +1,823 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 10, 2020 at 06:05 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `simkeu_maskh`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detail_komponen_perencanaan_bos`
+--
+
+CREATE TABLE `detail_komponen_perencanaan_bos` (
+  `id` int(11) NOT NULL,
+  `id_subkomponen_perencanaan_bos` int(11) DEFAULT NULL,
+  `kode` varchar(20) NOT NULL,
+  `uraian` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `detail_komponen_perencanaan_bos`
+--
+
+INSERT INTO `detail_komponen_perencanaan_bos` (`id`, `id_subkomponen_perencanaan_bos`, `kode`, `uraian`) VALUES
+(1, 16, '1.1', 'Penyusunan Kriteria Ketentuan Minimal'),
+(2, 16, '1.1.1', 'ATK Penyusunan KKM'),
+(3, 16, '1.1.2', 'Konsumsi/Snack rapat penyusunan KKM'),
+(4, 16, '1.2', 'Penyusunan Kriteria Kenaikan Kelas'),
+(5, 16, '1.2.1', 'ATK Penyusunan KKK'),
+(6, 16, '1.2.2', 'Konsumsi/Snack rapat penyusunan KKK'),
+(7, 16, '1.3', 'Penajaman Materi Ujian'),
+(8, 16, '1.3.1', 'Insentif pemateri'),
+(9, 16, '1.3.2', 'ATK Penyusunan Soal Try Out Madrasah'),
+(10, 16, '1.3.3', 'Biaya cetak, scan, analisis tryout MKKS Kabupaten dan Provinsi'),
+(11, 16, '1.3.4', 'Penggandaan soal tryout madrasah'),
+(12, 16, '1.3.5', 'Konsumsi/snack pengawas tryout'),
+(13, 16, '1.4', 'Tutor Sebaya'),
+(14, 16, '1.4.1', 'ATK kegiatan tutor sebaya'),
+(15, 16, '1.4.2', 'Bahan habis pakai kegiatan tutor sebaya'),
+(16, 16, '1.4.3', 'Konsumsi/snack kegiatan tutor sebaya'),
+(17, 17, '2.1', 'Pengembangan Kurikulum Tingkat Satuan Pendidikan (KTSP)'),
+(18, 17, '2.1.1', 'Pengembangan Dokumen KTSP'),
+(19, 17, '2.1.1.1', 'ATK penyusunan dokumen KTSP'),
+(20, 17, '2.1.1.2', 'Konsumsi/snack rapat penyusunan KTSP'),
+(21, 17, '2.1.1.3', 'Insentif tim pengembang KTSP'),
+(22, 17, '2.1.1.4', 'Penggandaan dokumen KTSP'),
+(23, 17, '2.1.1.5', 'Honor pemateri workshop KTSP'),
+(24, 17, '2.2', 'Penyusunan tugas guru dan jadwal pelajaran'),
+(25, 17, '2.2.1', 'ATK penyusunan tugas guru dan jadwal pelajaran'),
+(26, 17, '2.2.2', 'Konsumsi/snack rapat pembagian tugas dan penyusunan jadwal pelajaran'),
+(27, 17, '2.3', 'Penyusunan program tahunan'),
+(28, 17, '2.3.1', 'ATK penyusunan program tahunan'),
+(29, 17, '2.3.2', 'Konsumsi/snack rapat penyusunan program tahunan'),
+(30, 17, '2.4', 'Penyusunan program semester'),
+(31, 17, '2.4.1', 'ATK kegiatan penyusunan program semester'),
+(32, 17, '2.4.2', 'Biaya makan dan minum penyusunan program semester'),
+(33, 17, '2.5', 'Pengembangan Silabus dan RPP'),
+(34, 17, '2.5.1', 'ATK kegiatan pengembangan silabus dan RPP'),
+(35, 17, '2.5.2', 'Biaya makan dan minum pengembangan silabus dan RPP'),
+(36, 18, '3.1', 'Pendaftaran Peserta Didik Baru (PPDB)'),
+(37, 18, '3.1.1', 'Insentif panitian PPDB'),
+(38, 18, '3.1.2', 'ATK kegiatan PPDB'),
+(39, 18, '3.1.3', 'Bahan habis pakai PPDB'),
+(40, 18, '3.1.4', 'Konsumsi/snack panitia kegiatan PPDB'),
+(41, 18, '3.1.5', 'Konsumsi/snack rapat persiapan dan koordinasi PPDB'),
+(42, 18, '3.2', 'Kegiatan Pembelajaran'),
+(43, 18, '3.2.1', 'Pelaksanaan pembelajaran'),
+(44, 18, '3.2.1.1', 'Alat tulis kegiatan KBM'),
+(45, 18, '3.2.1.2', 'Bahan habis pakai kegiatan pembelajaran'),
+(46, 18, '3.3', 'Pengadaan sarana / administrasi kegiatan pembelajaran'),
+(47, 18, '3.3.1', 'Pembelian buku agenda harian guru'),
+(48, 18, '3.3.2', 'Pengadaan buku program tahunan'),
+(49, 18, '3.3.3', 'Pengedaan buku program semester'),
+(50, 18, '3.3.4', 'Pengadaan buku SKL / KKM'),
+(51, 18, '3.3.5', 'Pembelian buku pokok murid'),
+(52, 18, '3.3.6', 'Pembelian buku Klaper'),
+(53, 18, '3.3.7', 'Pembelian buku absen umum'),
+(54, 18, '3.3.8', 'Pembelian buku Kumpulan Administrasi Kelas'),
+(55, 18, '3.3.9', 'Pembelian buku kenaikan kelas'),
+(56, 18, '3.3.10', 'Pembelian ADM tabungan murid'),
+(57, 18, '3.3.11', 'Pembelian buku mutasi murid'),
+(58, 18, '3.3.12', 'Pembelian buku nilai murid'),
+(59, 18, '3.3.13', 'Pembelian buku penghubung murid'),
+(60, 18, '3.3.14', 'Pembelian buku raport / sampul raport'),
+(61, 18, '3.3.15', 'Pembelian buku pengumuman rapat'),
+(62, 18, '3.3.16', 'Pembelian buku notulen rapat'),
+(63, 18, '3.4', 'Pembuatan media pembelajaran'),
+(64, 18, '3.4.1', 'Bahan habis pakai pembuatan media pembelajaran'),
+(65, 18, '3.4.2', 'Insentif pelaksana pembuatan media pembelajaran'),
+(66, 18, '3.4.3', 'Snack/Konsumsi pelaksanaan pembuatan media pembelajaran'),
+(67, 18, '3.4.4', 'Pengadaan bahan-bahan praktik mata pelajaran'),
+(68, 18, '3.5', 'Kegiatan Remedial'),
+(69, 18, '3.5.1', 'ATK/bahan habis pakai kegiatan remedial'),
+(70, 18, '3.6', 'Kegiatan Pengayaan'),
+(71, 18, '3.6.1', 'ATK/bahan habis pakai kegiatan pengayaan'),
+(72, 18, '3.7', 'Kegiatan Ekstrakulikuler'),
+(73, 18, '3.7.1', 'Peningkatan prestasi bidang akademik'),
+(74, 18, '3.7.1.1', 'Lomba mata pelajaran (KSM, Olimpiade, MIPAK, dll)'),
+(75, 18, '3.7.1.1.1', 'Insentif pembinaan lomba mata pelajaran (Olympiade, MIPAK, dll)'),
+(76, 18, '3.7.1.1.2', 'ATK pembinaan lomba mata pelajaran (Olympiade, MIPAK, dll)'),
+(77, 18, '3.7.1.1.3', 'Penggandaan soal latihan lomba mata pelajaran (Olympiade, MIPAK, dll)'),
+(78, 18, '3.7.1.1.4', 'Pendaftaran mengikuti lomba tingkat Kec, Kab, Prov (Olympiade, MIPAK, dll)'),
+(79, 18, '3.7.1.1.5', 'Transport peserta lomba mata pelajaran (Olympiade, MIPAK, dll)'),
+(80, 18, '3.7.1.1.6', 'Transport pendamping lomba mata pelajaran'),
+(81, 18, '3.7.1.1.7', 'Konsumsi/snack peserta lomoba mata pelajaran'),
+(82, 18, '3.8', 'Peningkatan Presntasi Bidang Non-Akademik'),
+(83, 18, '3.8.1', 'Porseni/Aksioma'),
+(84, 18, '3.8.1.1', 'Insentif pelatih persiapan Porseni/Aksioma'),
+(85, 18, '3.8.1.2', 'Bahan habis pakai kegiatan Porseni/Aksioma'),
+(86, 18, '3.8.1.3', 'ATK dan bahan habis pakai kegiatan Porseni/Aksioma'),
+(87, 18, '3.8.1.4', 'Biaya pendaftaran kegiatan Porseni/Aksioma'),
+(88, 18, '3.8.1.5', 'Transport siswa peserta Porseni/Aksioma'),
+(89, 18, '3.8.1.6', 'Transport guru pendamping peserta Porseni/Aksioma'),
+(90, 18, '3.8.1.7', 'Konsumsi/snack siswa peserta Porseni/Aksioma'),
+(91, 18, '3.8.2', 'Mengikuti Perlombaan'),
+(92, 18, '3.8.2.1', 'Biaya pendaftaran mengikuti perlombaan'),
+(93, 18, '3.8.2.2', 'Konsumsi/snack peserta perlombaan'),
+(94, 18, '3.8.2.3', 'ATK/Bahan habis pakai mengikuti perlombaan'),
+(95, 18, '3.8.2.4', 'Transport siswa peserta perlombaan'),
+(96, 18, '3.8.2.5', 'Transport guru pendamping peserta perlombaan'),
+(97, 18, '3.8.2.6', 'Kemah bakti madrasah'),
+(98, 18, '3.9', 'Pelaksanaan Kegiatan Ekstrakulikuler'),
+(99, 18, '3.9.1', 'Ekstrakulikuler Pramuka'),
+(100, 18, '3.9.1.1', 'Insentif pelatih ekstrakulikuler pramuka'),
+(101, 18, '3.9.1.2', 'ATK/Bahan habis pakai kegiatan ekstrakulikuler '),
+(102, 18, '3.9.1.3', 'Pengadaan perlengkapan ekstrakulikuler pramuka'),
+(103, 18, '3.9.2', 'Ekstrakulikuler Olahraga'),
+(104, 18, '3.9.2.1', 'Insentif pelatih ekstrakulikuler olahraga'),
+(105, 18, '3.9.2.2', 'ATK/Bahan habis pakai kegiatan ekstrakulikuler'),
+(106, 18, '3.9.2.3', 'Pengadaan perlengkapan ekstrakulikuler olahraga'),
+(107, 18, '3.9.3', 'Ekstrakulikuler Kesenian'),
+(108, 18, '3.9.3.1', 'Insentif pelatih ekstrakulikuler kesenian'),
+(109, 18, '3.9.3.2', 'ATK/Bahan habis pakai kegiatan ekstrakulikuler'),
+(110, 18, '3.9.3.3', 'Pengadaan perlengkapan ekstrakulikuler kesenian'),
+(111, 18, '3.9.4', 'Ekstrakulikuler .......'),
+(112, 18, '3.9.4.1', 'Insentif pelatih ekstrakulikuler .......'),
+(113, 18, '3.9.4.2', 'ATK/Bahan habis pakai kegiatan ekstrakulikuler'),
+(114, 18, '3.9.4.3', 'Pengadaan perlengkapan ekstrakulikuler ......'),
+(115, 18, '3.10', 'Membantu Siswa Miskin'),
+(116, 18, '3.10.1', 'Membantu transport siswa miskin'),
+(117, 18, '3.10.2', 'Membantu perlengkapan alat tulis dan perlengkapan sekolah siswa miskin'),
+(118, 18, '3.10.3', 'membeli alat transportasi sederhana untuk siswa miskin'),
+(119, 19, '4.1', 'Honorarium Pendidik'),
+(120, 19, '4.1.2', 'Honorarium guru bukan PNS belum sertifikasi'),
+(121, 19, '4.1.3', 'Honorarium guru bukan PNS sudah sertifikasi diluar 24 jam'),
+(122, 19, '4.2', 'Honorarium Tenaga Pendidik'),
+(123, 19, '4.2.1', 'Honorarium Tata Usaha'),
+(124, 19, '4.2.2', 'Honorarium pegawai perpustakaan (tidak merangkap guru)'),
+(125, 19, '4.2.3', 'Honorarium penjaga madrasah'),
+(126, 19, '4.2.4', 'Honorarium petugas keamanan/satpam'),
+(127, 19, '4.2.5', 'Honorarium pegawai kebersihan'),
+(128, 19, '4.2.6', 'honorarium operator madrasah (tidak merangkap guru)'),
+(129, 19, '4.3', 'Peningkatan Kompetensi Pendidik'),
+(130, 19, '4.3.1', 'Transport guru peserta KKG/MGMP'),
+(131, 19, '4.3.2', 'Biaya pendaftaran seminar/pelatihan'),
+(132, 19, '4.3.3', 'Pelatihan profesionalisme Kepala dan Guru'),
+(133, 19, '4.4', 'Peningkatan Kompetensi Tenaga Kependidikan'),
+(134, 19, '4.4.1', 'Transport pelatihan tendik'),
+(135, 19, '4.4.2', 'Biaya pendaftaran pelatihan/seminar tendik'),
+(136, 19, '4.4.3', 'Inhous training'),
+(137, 19, '4.5', 'Biaya penyelenggaraan peningkatan kompetensi pendidik dan tendik'),
+(138, 19, '4.5.1', 'Honor Narasumber'),
+(139, 19, '4.5.2', 'ATK Kegiatan pelatihan'),
+(140, 19, '4.5.3', 'Penggandaan materi pelatihan'),
+(141, 19, '4.5.4', 'Biaya Makan dan Minum peserta pelatihan'),
+(142, 20, '5.1', 'Pengembangan Perpustakaan'),
+(143, 20, '5.1.1', 'Pembelian buku teks pembelajaran program guru siswa'),
+(144, 20, '5.1.2', 'Pembelian buku perpustakaan'),
+(145, 20, '5.1.3', 'Pembelian buku referensi'),
+(146, 20, '5.1.4', 'Membeli buku teks pelajaran agama'),
+(147, 20, '5.1.5', 'Langganan publikasi berkala'),
+(148, 20, '5.1.6', 'Biaya pemeliharaan/perawatan buku'),
+(149, 20, '5.1.7', 'Biaya pengembangan database perpustakaan'),
+(150, 20, '5.2', 'Perawatan Madrasah'),
+(151, 20, '5.2.1', 'Penambahan daya listrik'),
+(152, 20, '5.2.2', 'Pemeliharaan dinding gedung'),
+(153, 20, '5.2.2.1', 'Pengadaan bahan/alat'),
+(154, 20, '5.2.2.2', 'Upah pekerja'),
+(155, 20, '5.2.3', 'Pemeliharaan Atap dan plafon'),
+(156, 20, '5.2.3.1', 'Pengadaan bahan/alat'),
+(157, 20, '5.2.3.2', 'Upah pekerja'),
+(158, 20, '5.2.4', 'Pemeliharaan pintu dan jendela'),
+(159, 20, '5.2.4.1', 'Pengadaan bahan/alat'),
+(160, 20, '5.2.4.2', 'Upah pekerja'),
+(161, 20, '5.2.5', 'Pemeliharaan lantai'),
+(162, 20, '5.2.5.1', 'Pengadaan bahan/alat'),
+(163, 20, '5.2.5.2', 'Upah pekerja'),
+(164, 20, '5.2.6', 'Pemeliharaan kamar mandi/WC'),
+(165, 20, '5.2.6.1', 'Pengadaan bahan/alat'),
+(166, 20, '5.2.6.2', 'Upah pekerja'),
+(167, 20, '5.2.7', 'Perawatan mebeleir'),
+(168, 20, '5.2.7.1', 'Pengadaan bahan/alat mebeleir'),
+(169, 20, '5.2.7.2', 'Upah pekerja'),
+(170, 20, '5.3', 'Pengadaan, Pemeliharaan dan Perawatan Alat Kantor / Inventaris Madrasah'),
+(171, 20, '5.3.1', 'Biaya pemeliharaan/pengadaan jaringan telepon/internet'),
+(172, 20, '5.3.2', 'Biaya pemeliharaan/pengadaan komputer'),
+(173, 20, '5.3.3', 'Biaya pemeliharaan/pengadaan peralatan laboratorium'),
+(174, 20, '5.3.4', 'Biaya pemeliharaan/pengadaan peralatan UKS'),
+(175, 20, '5.4', 'Kebersihan, Keindahan dan Kelengkapan Madrasah'),
+(176, 20, '5.4.1', 'Penyedian alat-alat kebersihan'),
+(177, 20, '5.4.2', 'Pengadaan perlengkapan kelas'),
+(178, 20, '5.4.3', 'Pengadaan perlengkapan kantor'),
+(179, 20, '5.4.4', 'Pengadaan perlengkapan mushalla madrasah'),
+(180, 20, '5.5', 'Pembelian Perangkat Komputer'),
+(181, 20, '5.5.1', 'Pengadaan desktop/workstation'),
+(182, 20, '5.5.2', 'Membeli laptop'),
+(183, 20, '5.5.3', 'Membeli proyektor'),
+(184, 20, '5.5.4', 'Printer'),
+(185, 20, '5.5.5', 'Scanner'),
+(186, 20, '5.6', 'Belanja Lainnya jika komponen sudah terpenuhi'),
+(187, 20, '5.6.1', 'Alat praga pendidikan/media pembelajaran'),
+(188, 20, '5.6.2', 'Mesin Ketik'),
+(189, 20, '5.6.3', 'Finger print'),
+(190, 20, '5.6.4', 'Alat Ibadah'),
+(191, 20, '5.6.5', 'Pembelian meja dan kursi siswa jika meja dan kursi yang ada sudah rusak'),
+(192, 21, '6.1', 'ATK Penyusunan RKM, RKAM'),
+(193, 21, '6.2', 'ATK penyusunan Visi dan Misi Madrasah'),
+(194, 21, '6.3', 'Konsumsi/snack rapat penyusunan RKJM,RAKM, Visi dan Misi'),
+(195, 21, '6.4', 'Insentif tim pelaksana kegiatan penyusunan RKJM, RAKM, Visi dan Misi'),
+(196, 22, '7.1', 'Rumah Tangga Madrasah'),
+(197, 22, '7.1.1', 'Belanja Alat Tulis Kantor'),
+(198, 22, '7.1.2', 'Belanja alat listrik (lampu pijar dll)'),
+(199, 22, '7.1.3', 'Biaya perangko, materai, dan benda pos lainnya'),
+(200, 22, '7.1.4', 'Biaya Fotocopy'),
+(201, 22, '7.1.5', 'Belanja kebutuhan sehari hari'),
+(202, 22, '7.1.6', 'Belanja bahan habis pakai'),
+(203, 22, '7.2', 'Langganan Daya dan Jasa'),
+(204, 22, '7.2.1', 'Langganan daya listrik'),
+(205, 22, '7.2.2', 'Langganan daya internet'),
+(206, 22, '7.2.3', 'Langganan PDAM'),
+(207, 22, '7.2.4', 'Langganan jasa surat kabar'),
+(208, 22, '7.2.5', 'Langganan jasa telepon'),
+(209, 22, '7.2.6', 'Langganan jasa pengumpulan sampah'),
+(210, 22, '7.3', 'Pengelolaan BOS'),
+(211, 22, '7.3.1', 'ATK/bahan habis pakai pengelolaan BOS'),
+(212, 22, '7.3.2', 'Insentif bendahara pengelola BOS'),
+(213, 22, '7.3.3', 'Biaya transport pencairan dana BOS'),
+(214, 22, '7.3.4', 'Biaya transport pengusulan dan pelaporan BOS'),
+(215, 23, '8.1', 'Penyusunan Kisi Kisi'),
+(216, 23, '8.1.1', 'Ulangan Harian'),
+(217, 23, '8.1.1.1', 'ATK Kegiatan kisi-kisi'),
+(218, 23, '8.1.1.2', 'Penggandaan kisi-kisi ulangan harian'),
+(219, 23, '8.1.2', 'Ulangan Tengah Semester'),
+(220, 23, '8.1.2.1', 'ATK kegiatan penyusunan kisi-kisi'),
+(221, 23, '8.1.2.2', 'Penggandaan kisi-kisi ulangan harian'),
+(222, 23, '8.2', 'Penyusunan Soal'),
+(223, 23, '8.2.1', 'Ulangan Harian'),
+(224, 23, '8.2.1.1', 'ATK kegiatan penyusunan soal'),
+(225, 23, '8.2.1.2', 'Penggandaan soal ulangan harian'),
+(226, 23, '8.2.2', 'Ulangan Tengah Semester'),
+(227, 23, '8.2.2.1', 'ATK kegiatan penyusunan soal'),
+(228, 23, '8.2.2.2', 'Penggandaan soal ulangan harian'),
+(229, 23, '8.3', 'Pelaksanaan Ulangan'),
+(230, 23, '8.3.1', 'Ulangan Akhir Semester'),
+(231, 23, '8.3.1.1', 'ATK kegiatan UAS'),
+(232, 23, '8.3.1.2', 'Penggandaan naskah UAS'),
+(233, 23, '8.3.1.3', 'Konsumsi/snack pengawas UAS'),
+(234, 23, '8.3.1.4', 'Insentif penulisan buku lapor siswa'),
+(235, 23, '8.3.2', 'Ulangan Kenaikan Kelas'),
+(236, 23, '8.3.2.1', 'ATK kegiatan UAS'),
+(237, 23, '8.3.2.2', 'Penggandaan naskah UAS'),
+(238, 23, '8.3.2.3', 'Konsumsi/snack pengawas UAS'),
+(239, 23, '8.3.2.4', 'Insentif penulisan buku lapor siswa'),
+(240, 23, '8.4', 'Ujian Akhir Madrasah Berstandar Nasional'),
+(241, 23, '8.4.1', 'Insentif korektor ujian madrasah'),
+(242, 23, '8.4.2', 'ATK kegiatan ujian madrasah'),
+(243, 23, '8.4.3', 'Penggandaan naskah ujian madrasah'),
+(244, 23, '8.4.4', 'Konsumsi/snack pengawasan UAS'),
+(245, 23, '8.4.5', 'Insentif pengawas silang ruang ujian madrasah'),
+(246, 23, '8.5', 'Ujian Akhir Sekolah Berstandar Nasional'),
+(247, 23, '8.5.1', 'Insentif korektor ujian sekolah'),
+(248, 23, '8.5.2', 'ATK kegiatan ujian sekolah'),
+(249, 23, '8.5.3', 'Penggandaan naskah ujian sekolah'),
+(250, 23, '8.5.4', 'Konsumsi/snack pengawasan UAS'),
+(251, 23, '8.5.5', 'Insentif pengawas silang ruang ujian sekolah'),
+(252, 23, '8.6', 'Ujian Praktek'),
+(253, 23, '8.6.1', 'Insentif penguji ujian praktek'),
+(254, 23, '8.6.2', 'ATK Kegiatan ujian praktek'),
+(255, 23, '8.6.3', 'Konsumsi/snack kegiatan ujian praktek');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jenis_penggunaan_dana`
+--
+
+CREATE TABLE `jenis_penggunaan_dana` (
+  `id` int(11) NOT NULL,
+  `nama_penggunaan` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jenis_penggunaan_dana`
+--
+
+INSERT INTO `jenis_penggunaan_dana` (`id`, `nama_penggunaan`) VALUES
+(1, 'Pengembangan Perpustakaan'),
+(2, 'Kegiatan Penerimaan Siswa Baru'),
+(3, 'Kegiatan dan Pembelajaran Ekskul Siswa'),
+(4, 'Kegiatan Ulangan dan Ujian'),
+(5, 'Pembelian Bahan Habis Pakai'),
+(6, 'Daya Langganan Daya dan Jasa'),
+(7, 'Perawatan Sekolah'),
+(8, 'Pembayaran Honorarium Bulanan Guru Honorer dan Tenaga Kependidikan Honorer'),
+(9, 'Pengembangan Profesi Guru'),
+(10, 'Membantu Siswa Miskin'),
+(11, 'pembiayaan pengelolaan BOS'),
+(12, 'Pembelian Perangkat Komputer'),
+(13, 'Biaya Lainnya jika Komponen 1 - 12 telah Terpenuhi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `komponen_perencanaan_bos`
+--
+
+CREATE TABLE `komponen_perencanaan_bos` (
+  `id` int(11) NOT NULL,
+  `nama_komponen` varchar(255) DEFAULT NULL,
+  `jenis` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `komponen_perencanaan_bos`
+--
+
+INSERT INTO `komponen_perencanaan_bos` (`id`, `nama_komponen`, `jenis`) VALUES
+(1, 'Sisa Tahun Lalu', 'Sumber Dana'),
+(2, 'Pendapatan Rutin', 'Sumber Dana'),
+(3, 'Bantuan Operasional Sekolah', 'Sumber Dana'),
+(4, 'Bantuan', 'Sumber Dana'),
+(5, 'Pendapatan Asli Madrasah', 'Sumber Dana'),
+(6, 'Program Madrasah', 'Penggunaan'),
+(7, 'Belanja Lain', 'Penggunaan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `komponen_perencanaan_bpmu`
+--
+
+CREATE TABLE `komponen_perencanaan_bpmu` (
+  `id` int(11) NOT NULL,
+  `nama_komponen` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `komponen_perencanaan_bpmu`
+--
+
+INSERT INTO `komponen_perencanaan_bpmu` (`id`, `nama_komponen`) VALUES
+(1, 'Belanja Operasi Personalia'),
+(2, 'Belanja Operasi Non Personalia');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengguna`
+--
+
+CREATE TABLE `pengguna` (
+  `id` int(11) NOT NULL,
+  `nama_lengkap` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `level` varchar(100) NOT NULL,
+  `status` varchar(1) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pengguna`
+--
+
+INSERT INTO `pengguna` (`id`, `nama_lengkap`, `username`, `password`, `level`, `status`) VALUES
+(1, 'Asep Firmansyah', 'keptu', '3b5da3d68a2dded94546d9b1d9fad0e4', 'Tata Usaha', '1'),
+(2, 'Pulung', 'kepma', 'eda3b5ac169e869ed5e35631c59d1c08', 'Kepala Madrasah', '1'),
+(3, 'administrator', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '1'),
+(4, 'hash', 'hash', '2346ad27d7568ba9896f1b7da6b5991251debdf2', '', '1'),
+(5, 'ajaj', 'ajaja', 'c4be5eedf360cc78008d3825cb992a0c5ea3cc86', 'Tata Usaha', '1'),
+(6, 'ttt', 'ttuuuuuuu', '036b67f54180ea0e74dc1e7e0e883c855329f8e8', 'Tata Usaha', '1'),
+(7, '', '', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Kepala Sekolah', '1'),
+(8, 'v', 'v', '7a38d8cbd20d9932ba948efaa364bb62651d5ad4', 'Kepala Sekolah', '0'),
+(9, 'Kepsek', 'kepala', '10a34637ad661d98ba3344717656fcc76209c2f8', 'Kepala Sekolah', '0'),
+(10, '', '', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Kepala Sekolah', '0'),
+(11, '', '', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Kepala Sekolah', '0'),
+(12, '', '', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Kepala Sekolah', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perencanaan_bos`
+--
+
+CREATE TABLE `perencanaan_bos` (
+  `id` varchar(8) NOT NULL,
+  `jumlah_siswa` int(11) DEFAULT NULL,
+  `tahun` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `perencanaan_bos`
+--
+
+INSERT INTO `perencanaan_bos` (`id`, `jumlah_siswa`, `tahun`) VALUES
+('1', 91, 2018);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perencanaan_bos_detail`
+--
+
+CREATE TABLE `perencanaan_bos_detail` (
+  `id` varchar(8) NOT NULL,
+  `id_perencanaan_bos` varchar(8) DEFAULT NULL,
+  `id_subkomponen_perencanaan_bos` varchar(8) DEFAULT NULL,
+  `id_detail_komponen_perencanaan_bos` int(11) DEFAULT NULL,
+  `bulan` varchar(20) DEFAULT NULL,
+  `jumlah_dana` int(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `perencanaan_bos_detail`
+--
+
+INSERT INTO `perencanaan_bos_detail` (`id`, `id_perencanaan_bos`, `id_subkomponen_perencanaan_bos`, `id_detail_komponen_perencanaan_bos`, `bulan`, `jumlah_dana`) VALUES
+('1', '1', '6', NULL, NULL, 1400000),
+('2', '1', '7', NULL, NULL, 500000),
+('3', '1', '16', 2, 'Januari', 350000),
+('4', '1', '16', 2, 'Juli', 350000),
+('5', '1', '16', 3, 'Januari', 800000),
+('6', '1', '16', 3, 'Juli', 800000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perencanaan_bpmu`
+--
+
+CREATE TABLE `perencanaan_bpmu` (
+  `id` varchar(8) NOT NULL,
+  `jumlah_siswa` int(11) DEFAULT NULL,
+  `tahun` int(4) DEFAULT NULL,
+  `biaya_siswa` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `perencanaan_bpmu`
+--
+
+INSERT INTO `perencanaan_bpmu` (`id`, `jumlah_siswa`, `tahun`, `biaya_siswa`) VALUES
+('B1', 71, 2018, 550000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perencanaan_bpmu_detail`
+--
+
+CREATE TABLE `perencanaan_bpmu_detail` (
+  `id` varchar(8) NOT NULL,
+  `id_perencanaan_bpmu` varchar(8) DEFAULT NULL,
+  `id_subkomponen_perencanaan_bpmu` varchar(8) DEFAULT NULL,
+  `quantitas` int(8) DEFAULT NULL,
+  `id_satuan` int(2) DEFAULT NULL,
+  `jumlah_dana` int(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profil_madrasah`
+--
+
+CREATE TABLE `profil_madrasah` (
+  `npsn` varchar(8) DEFAULT NULL,
+  `nama_sekolah` varchar(255) DEFAULT NULL,
+  `tahun_buka` int(4) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `desa` varchar(100) DEFAULT NULL,
+  `kecamatan` varchar(100) DEFAULT NULL,
+  `kota` varchar(100) DEFAULT NULL,
+  `provinsi` varchar(100) DEFAULT NULL,
+  `kodepos` int(5) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `telp` varchar(13) DEFAULT NULL,
+  `status_sekolah` varchar(10) DEFAULT NULL,
+  `jenjang` varchar(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `profil_madrasah`
+--
+
+INSERT INTO `profil_madrasah` (`npsn`, `nama_sekolah`, `tahun_buka`, `alamat`, `desa`, `kecamatan`, `kota`, `provinsi`, `kodepos`, `email`, `telp`, `status_sekolah`, `jenjang`) VALUES
+('69941673', 'MA Plus Siti Khadijah ', 2013, 'Jl. Raya Rajagaluh - Sumber KM.01', 'Buah Kapas', 'Sindangwangi', 'Kabupaten Majalengka', 'Jawa Barat', 45474, 'maplus.sitikhadijah@gmail.com', '02338514248', 'Swasta', 'MA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `realisasi_bos`
+--
+
+CREATE TABLE `realisasi_bos` (
+  `kode` varchar(25) NOT NULL,
+  `tanggal` date DEFAULT NULL,
+  `no_bukti` varchar(25) DEFAULT NULL,
+  `jenis_transaksi` varchar(25) DEFAULT NULL,
+  `jumlah_dana` int(25) DEFAULT NULL,
+  `id_jenis_penggunaan_dana` int(11) DEFAULT NULL,
+  `id_perencanaan_bos_detail` varchar(8) DEFAULT NULL,
+  `uraian` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `realisasi_bpmu`
+--
+
+CREATE TABLE `realisasi_bpmu` (
+  `kode` varchar(25) NOT NULL,
+  `tanggal` date DEFAULT NULL,
+  `no_bukti` varchar(25) DEFAULT NULL,
+  `id_perencanaan_bpmu_detail` varchar(8) DEFAULT NULL,
+  `uraian` varchar(255) DEFAULT NULL,
+  `jenis_transaksi` varchar(25) DEFAULT NULL,
+  `jumlah_dana` int(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `satuan`
+--
+
+CREATE TABLE `satuan` (
+  `id` int(2) NOT NULL,
+  `nama_satuan` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subkomponen_perencanaan_bos`
+--
+
+CREATE TABLE `subkomponen_perencanaan_bos` (
+  `id` varchar(8) NOT NULL,
+  `id_komponen_perencanaan_bos` int(11) DEFAULT NULL,
+  `nama_subkomponen` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `subkomponen_perencanaan_bos`
+--
+
+INSERT INTO `subkomponen_perencanaan_bos` (`id`, `id_komponen_perencanaan_bos`, `nama_subkomponen`) VALUES
+('1', 2, 'Gaji PNS / DPK'),
+('10', 4, 'Dana Tugas Pembantuan'),
+('11', 4, 'Dana Alokasi Khusus'),
+('12', 4, 'lain-lain (bantuan luar negeri / hibah)'),
+('13', 5, 'Bantuan Orang Tua Siswa'),
+('14', 5, 'Bantuan Komite Madrasah'),
+('15', 5, 'Usaha Madrasah Lainnnya'),
+('16', 6, 'Pengembangan Standar Kompetensi Lulusan (SKL)'),
+('17', 6, 'Pengembangan Standar Isi'),
+('18', 6, 'Pengembangan Proses Pembelajaran'),
+('19', 6, 'Pengembangan Tenaga Pendidik dan Tenaga Kependidikan'),
+('2', 2, 'Gaji Pegawai Tetap Yayasan'),
+('20', 6, 'Pengembangan Sarana dan Prasarana Madrasah'),
+('21', 6, 'Pengembangan dan Implementasi Manajemen Madrasah'),
+('22', 6, 'Pengembangan dan Penggalian sumber dana pendidikan'),
+('23', 6, 'Pengembangan dan Implementasi sistem penilaian'),
+('24', 7, 'Belanja Pegawai'),
+('25', 7, 'Belanja Barang'),
+('26', 7, 'Belanja Pemeliharaan'),
+('27', 7, 'Belanja Lainn-Lain'),
+('3', 2, 'Belanja Barang'),
+('4', 2, 'Belanja Pemeliharaan'),
+('5', 2, 'Belanja lain-lain'),
+('6', 3, 'BOS Pusat'),
+('7', 3, 'BOS Provinsi'),
+('8', 3, 'BOS Kadipaten / Kota'),
+('9', 4, 'Dana Dekosentrasi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subkomponen_perencanaan_bpmu`
+--
+
+CREATE TABLE `subkomponen_perencanaan_bpmu` (
+  `id` varchar(8) NOT NULL,
+  `id_komponen_perencanaan_bpmu` int(11) DEFAULT NULL,
+  `kode` varchar(11) DEFAULT NULL,
+  `nama_komponen` varchar(255) DEFAULT NULL,
+  `keterangan` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `subkomponen_perencanaan_bpmu`
+--
+
+INSERT INTO `subkomponen_perencanaan_bpmu` (`id`, `id_komponen_perencanaan_bpmu`, `kode`, `nama_komponen`, `keterangan`) VALUES
+('1', 1, 'A.1', 'Honorarium Guru Honorer', NULL),
+('10', 1, 'A.1.9', 'Honor Penyusunan RPP dan Bahan Ajar', NULL),
+('11', 1, 'A.2', 'Honorarium Tenaga Kependidikan Honorer', NULL),
+('12', 1, 'A.3', 'Insentif Bendahara', NULL),
+('13', 2, 'B.1', 'Biaya Pelaporan, dan Operasi Non Personalia', NULL),
+('2', 1, 'A.1.1', 'Honor Mengajar', NULL),
+('3', 1, 'A.1.2', 'Honor Pembinaan Ekstrakulikuler', NULL),
+('4', 1, 'A.1.3', 'Honor Wali Kelas, Ketua Jurusan / Ketua Program Studi dan Kepala Lab', NULL),
+('5', 1, 'A.1.4', 'Honor penyusunan naskah soal ujian semester/sekolah', NULL),
+('6', 1, 'A.1.5', 'Honor Pengawasan Ujian Sekolah', NULL),
+('7', 1, 'A.1.6', 'Honor Pemeriksaan Hasil Ujian Sekolah', NULL),
+('8', 1, 'A.1.7', 'Honor Panitia Kegiatan Penerimaan Siswa Baru', NULL),
+('9', 1, 'A.1.8', 'Honor Panitia/Penyelenggaraan Ulangan/Ujian', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `detail_komponen_perencanaan_bos`
+--
+ALTER TABLE `detail_komponen_perencanaan_bos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `jenis_penggunaan_dana`
+--
+ALTER TABLE `jenis_penggunaan_dana`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `komponen_perencanaan_bos`
+--
+ALTER TABLE `komponen_perencanaan_bos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `komponen_perencanaan_bpmu`
+--
+ALTER TABLE `komponen_perencanaan_bpmu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pengguna`
+--
+ALTER TABLE `pengguna`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `perencanaan_bos`
+--
+ALTER TABLE `perencanaan_bos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `perencanaan_bos_detail`
+--
+ALTER TABLE `perencanaan_bos_detail`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_perencanaan_bos` (`id_perencanaan_bos`),
+  ADD KEY `id_subkomponen_perencanaan_bos` (`id_subkomponen_perencanaan_bos`),
+  ADD KEY `id_detail_komponen_perencanaan_bos` (`id_detail_komponen_perencanaan_bos`);
+
+--
+-- Indexes for table `perencanaan_bpmu`
+--
+ALTER TABLE `perencanaan_bpmu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `perencanaan_bpmu_detail`
+--
+ALTER TABLE `perencanaan_bpmu_detail`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_perencanaan_bpmu` (`id_perencanaan_bpmu`),
+  ADD KEY `id_subkomponen_perencanaan_bpmu` (`id_subkomponen_perencanaan_bpmu`);
+
+--
+-- Indexes for table `realisasi_bos`
+--
+ALTER TABLE `realisasi_bos`
+  ADD PRIMARY KEY (`kode`),
+  ADD KEY `id_perencanaan_bos_detail` (`id_perencanaan_bos_detail`),
+  ADD KEY `id_jenis_penggunaan_dana` (`id_jenis_penggunaan_dana`);
+
+--
+-- Indexes for table `realisasi_bpmu`
+--
+ALTER TABLE `realisasi_bpmu`
+  ADD PRIMARY KEY (`kode`),
+  ADD KEY `id_perencanaan_bpmu_detail` (`id_perencanaan_bpmu_detail`);
+
+--
+-- Indexes for table `satuan`
+--
+ALTER TABLE `satuan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `subkomponen_perencanaan_bos`
+--
+ALTER TABLE `subkomponen_perencanaan_bos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_subkomponen_perencanaan_bos` (`id_komponen_perencanaan_bos`);
+
+--
+-- Indexes for table `subkomponen_perencanaan_bpmu`
+--
+ALTER TABLE `subkomponen_perencanaan_bpmu`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_komponen_perencanaan_bpmu` (`id_komponen_perencanaan_bpmu`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `detail_komponen_perencanaan_bos`
+--
+ALTER TABLE `detail_komponen_perencanaan_bos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=257;
+
+--
+-- AUTO_INCREMENT for table `jenis_penggunaan_dana`
+--
+ALTER TABLE `jenis_penggunaan_dana`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `komponen_perencanaan_bos`
+--
+ALTER TABLE `komponen_perencanaan_bos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `komponen_perencanaan_bpmu`
+--
+ALTER TABLE `komponen_perencanaan_bpmu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `pengguna`
+--
+ALTER TABLE `pengguna`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `satuan`
+--
+ALTER TABLE `satuan`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `perencanaan_bos_detail`
+--
+ALTER TABLE `perencanaan_bos_detail`
+  ADD CONSTRAINT `perencanaan_bos_detail_ibfk_1` FOREIGN KEY (`id_perencanaan_bos`) REFERENCES `perencanaan_bos` (`id`),
+  ADD CONSTRAINT `perencanaan_bos_detail_ibfk_2` FOREIGN KEY (`id_subkomponen_perencanaan_bos`) REFERENCES `subkomponen_perencanaan_bos` (`id`),
+  ADD CONSTRAINT `perencanaan_bos_detail_ibfk_3` FOREIGN KEY (`id_detail_komponen_perencanaan_bos`) REFERENCES `detail_komponen_perencanaan_bos` (`id`);
+
+--
+-- Constraints for table `perencanaan_bpmu_detail`
+--
+ALTER TABLE `perencanaan_bpmu_detail`
+  ADD CONSTRAINT `perencanaan_bpmu_detail_ibfk_1` FOREIGN KEY (`id_perencanaan_bpmu`) REFERENCES `perencanaan_bpmu` (`id`),
+  ADD CONSTRAINT `perencanaan_bpmu_detail_ibfk_2` FOREIGN KEY (`id_subkomponen_perencanaan_bpmu`) REFERENCES `subkomponen_perencanaan_bpmu` (`id`);
+
+--
+-- Constraints for table `realisasi_bos`
+--
+ALTER TABLE `realisasi_bos`
+  ADD CONSTRAINT `realisasi_bos_ibfk_2` FOREIGN KEY (`id_perencanaan_bos_detail`) REFERENCES `perencanaan_bos_detail` (`id`),
+  ADD CONSTRAINT `realisasi_bos_ibfk_3` FOREIGN KEY (`id_jenis_penggunaan_dana`) REFERENCES `jenis_penggunaan_dana` (`id`);
+
+--
+-- Constraints for table `realisasi_bpmu`
+--
+ALTER TABLE `realisasi_bpmu`
+  ADD CONSTRAINT `realisasi_bpmu_ibfk_1` FOREIGN KEY (`id_perencanaan_bpmu_detail`) REFERENCES `perencanaan_bpmu_detail` (`id`);
+
+--
+-- Constraints for table `subkomponen_perencanaan_bos`
+--
+ALTER TABLE `subkomponen_perencanaan_bos`
+  ADD CONSTRAINT `subkomponen_perencanaan_bos_ibfk_1` FOREIGN KEY (`id_komponen_perencanaan_bos`) REFERENCES `komponen_perencanaan_bos` (`id`);
+
+--
+-- Constraints for table `subkomponen_perencanaan_bpmu`
+--
+ALTER TABLE `subkomponen_perencanaan_bpmu`
+  ADD CONSTRAINT `subkomponen_perencanaan_bpmu_ibfk_1` FOREIGN KEY (`id_komponen_perencanaan_bpmu`) REFERENCES `komponen_perencanaan_bpmu` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
