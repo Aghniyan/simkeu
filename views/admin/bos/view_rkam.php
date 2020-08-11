@@ -174,8 +174,8 @@ $rincian_rkam = tampil_subkomponen_perencanaan_bos(6);
                     <td width='10%'><?=$d['kode']?></td>
                     <td><?=$d['uraian']?></td>
                     <td width='20%'>
-                      <a href="form_ubah_rkam.php?id=<?=$d['id']?>" id="btn_ubah" class="btn btn-warning btn-sm">ubah</a>
-                      <a href="hapus_rkam.php?id=<?=$d['id']?>" id="btn_hapus" class="btn btn-danger btn-sm">hapus</a>
+                      <a href="form_ubah_rkam.php?id=<?=$d['kode']?>" id="btn_ubah" class="btn btn-warning btn-sm">ubah</a>
+                      <a href="hapus_rkam.php?id=<?=$d['kode']?>" id="btn_hapus" class="btn btn-danger btn-sm">hapus</a>
                     </td>
                   </tr>
                   <?php $j++; } ?>

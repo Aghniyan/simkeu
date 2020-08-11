@@ -8,7 +8,8 @@ include_once('../../templates/sidebar.php');
 $rkam_sumber = tampil_komponen_perencanaan_bos("Sumber Dana");
 $rkam_penggunaan = tampil_komponen_perencanaan_bos("Penggunaan");
 $rincian_rkam = tampil_subkomponen_perencanaan_bos(6);
-$bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+$tahun = 2018;
+$bulan = nama_bulan();
 ?>  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -77,7 +78,10 @@ $bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","Se
                       <th></th>
                     </tr>
                     <?php 
-                    $sub = tampil_rkam($d['id']);
+                    $data = [
+                      'id_komponen_perencanaan_bos'=>$d['id']
+                    ];
+                    $sub = tampil_rekap_rkam($data);
                     // var_dump($sub);
                     $j=1;
                     foreach($sub as $s){
@@ -86,7 +90,7 @@ $bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","Se
                       <td width='10%'></td>
                       <td width='10%'><?=$i.'.'.$j?></td>
                       <td><?=$s['nama_subkomponen']?></td>
-                      <td><?php $jml=($s['id_komponen_perencanaan_bos']!=3) ? $s['jumlah_dana'] : ($s['jumlah_dana']*91) ; echo 'Rp '.number_format($jml)?></td>
+                      <td><?='Rp '.number_format($s['total'])?></td>
                     </tr>
                     <?php $j++; } ?>
                     <?php $i++; } ?>
@@ -125,15 +129,19 @@ $bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","Se
                       <th></th>
                     </tr>
                     <?php 
-                    $sub = tampil_subkomponen_perencanaan_bos($d['id']);
+                    
+                    $data = [
+                      'id_komponen_perencanaan_bos'=>$d['id']
+                    ];
+                    $sub = tampil_rekap_rkam($data);
                     $j=1;
                     foreach($sub as $s){
-                    ?>
+                      ?>
                     <tr>
                       <td width='10%'></td>
                       <td width='10%'><?=$i.'.'.$j?></td>
                       <td><?=$s['nama_subkomponen']?></td>
-                      <td></td>
+                      <td><?='Rp '.number_format($s['total'])?></td>
                     </tr>
                     <?php $j++; } ?>
                     <?php $i++; } ?>
@@ -163,9 +171,9 @@ $bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","Se
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <div >
-            <a href="form_tambah_rkam.php" id="btn_tambah" class="btn btn-primary btn-sm">Tambah Data</a>
-          </div>
+          <!-- <div >
+            <a href="form_tambah_rincian_rkam.php" id="btn_tambah" class="btn btn-primary btn-sm">Tambah Data</a>
+          </div> -->
         <?php $i=1; foreach ($rincian_rkam as $r){
           ?>
           <div class="box box-default collapsed-box ">
@@ -202,18 +210,27 @@ $bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","Se
                   $detail = tampil_detail_komponen_perencanaan_bos($r['id'],null);
                   $j=1;
                   foreach($detail as $d){
+                    $uraian=tampil_rincian_rkam($d['kode']);
+                    
                   ?>
 
                   <tr>
                     <td><?=$d['kode']?></td>
                     <td><?=$d['uraian']?></td>
-                    <td></td>
-                    <?php for ($no=0; $no <count($bulan) ; $no++) { ?>
-                    <td>0</td>
+                    <th><?=number_format($d['total'],0,',','.')?></td>
+                    <?php for ($no=0; $no <count($bulan) ; $no++) { 
+                    ?>
+                    <td>
+                      <?php 
+                        foreach ($uraian as $u) {
+                          echo $retVal = ($u['bulan']==$bulan[$no]) ? number_format($u['jumlah_dana'],0,',','.') : '' ;
+                        }
+                      ?>
+                    </td>
                     <?php } ?>
                     <td>
-                      <a href="form_ubah_rkam.php?id=<?=$d['id']?>" id="btn_ubah" class="btn btn-warning btn-sm">ubah</a>
-                      <a href="hapus_rkam.php?id=<?=$d['id']?>" id="btn_hapus" class="btn btn-danger btn-sm">hapus</a>
+                      <a href="form_ubah_rincian_rkam.php?id=<?=$d['kode']?>&thn=<?=$tahun?>" id="btn_ubah" class="btn btn-warning btn-sm">ubah</a>
+                      <a href="hapus_rincian_rkam.php?id=<?=$d['kode']?>&thn=<?=$tahun?>" id="btn_hapus" class="btn btn-danger btn-sm">hapus</a>
                     </td>
                   </tr>
                   <?php $j++; } ?>
